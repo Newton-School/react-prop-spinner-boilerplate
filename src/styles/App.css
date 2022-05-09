@@ -1,0 +1,84 @@
+.cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    max-width: 700px;
+    margin: auto;
+}
+
+.anim-grow {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    vertical-align: -0.125em;
+    border-radius: 50%;
+    border: 0.25em solid #0070f3;
+    background-color: #0070f3;
+    opacity: 0;
+    animation: grow 0.75s linear infinite;
+}
+
+.anim-border {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    vertical-align: -0.125em;
+    border-radius: 50%;
+    border: 0.25em solid #0070f3;
+    border-right: 0.25em solid transparent !important;
+    animation: border 0.75s linear infinite;
+}
+
+
+@keyframes grow {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+@keyframes border {
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+
+select {
+    margin: 10px 0;
+    appearance: none;
+    -webkit-appearance: none;
+
+    font: inherit;
+    font-size: inherit;
+    font-weight: 400;
+
+    /* opinionated design defaults */
+    block-size: 2.75rem;
+    inline-size: 100%;
+    border: 1px solid #000;
+    border-radius: .25rem;
+    background-color: #fff;
+    color: #000;
+
+    padding-inline-start: .5rem;
+    /* compensate for arrow icon, so text doesn't overlap it */
+    padding-inline-end: 2rem;
+
+    /* arrow icon */
+    background-image:
+        conic-gradient(from 45deg,
+            transparent 0% 25%,
+            transparent 0% 75%,
+            currentColor 0%);
+
+    background-size: 12px 12px;
+    background-position: right 1rem top calc(50% + 4px);
+    background-repeat: no-repeat;
+}
